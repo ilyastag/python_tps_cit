@@ -16,7 +16,7 @@ users=[
 
 label1=tk.Label(root,text="Login page",padx=10,pady=10,anchor="e",bg="black",fg="white",font=("Arial",20))
 label1.grid(row=0,column=0,sticky="nsew")
-frame1=tk.Frame(root,padx=10,pady=10,bg="green")
+frame1=tk.Frame(root,padx=10,pady=10,)
 frame1.grid(row=1,column=0)
 img=tk.PhotoImage(file="D:\python_tps_cit\gui\\tp14login\profil.png")
 label2=tk.Label(frame1,image=img,padx=10,pady=10)
@@ -53,13 +53,21 @@ frame2.columnconfigure(0,weight=1)
 frame2.columnconfigure(1,weight=3)
 
 
-usernameentry.focus_set()
 
 def funt(event):
-    event.widget.config(bg="yellow")
+   event.widget.config(bg="yellow")
 
 def funt2(event):
     event.widget.config(bg="white")
+
+
+usernameentry.bind('<FocusIn>',funt)
+usernameentry.bind('<FocusOut>',funt2)
+
+pwdentry.bind('<FocusIn>',funt)
+pwdentry.bind('<FocusOut>',funt2)
+
+usernameentry.focus_set()
 
 
 root.mainloop()
