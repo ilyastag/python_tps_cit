@@ -26,7 +26,7 @@ f = CTkFrame(master=app, border_color='yellow', border_width=2, width=330, heigh
 f.place(relx=0.5, rely=0.5, anchor='center')
 
 # Charger l'image
-image_path = r"C:\Users\thinkpad\Desktop\ux\112.png"
+image_path = "112.png"
 try:
     img = Image.open(image_path)
     ctk_img = CTkImage(light_image=img, size=(50, 50))  # Taille personnalisée
